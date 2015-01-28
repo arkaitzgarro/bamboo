@@ -5,7 +5,9 @@
 {% endblock content_title %}
 
 {% block header_actions %}
+    {% if category.id is not null %}
     <a target="_blank" href="{{ url("store_category_products_list",{id: category.id, slug: category.slug}) }}" class="button-primary"><i class="icon-eye"></i> {{ 'View on your store'|trans }}</a>
+    {% endif %}
 {% endblock header_actions %}
 
 {% block breadcrumb %}
