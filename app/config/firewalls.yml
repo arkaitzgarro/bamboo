@@ -30,23 +30,15 @@ security:
                     github: /login/check-github
                     paypal: /login/check-paypal
 
-        dev:
-            #context: admin_context
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
         login_area:
-            #context: admin_context
             pattern: ^/%bamboo_admin_prefix%/login$
             anonymous: ~
 
         password_area:
-            #context: admin_context
             pattern: ^/%bamboo_admin_prefix%/password.*$
             anonymous: ~
 
         admin_secured_area:
-            #context: admin_context
             provider: adminuser
             pattern: ^/%bamboo_admin_prefix%?.*$
             simple-preauth:
