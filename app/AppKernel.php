@@ -141,4 +141,9 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+    public function getCacheDir()
+    {
+        return $this->rootDir.'/cache/'.getenv('SYMFONY__BAMBOO__PREFIX').'/'.$this->environment;
+    }
 }
